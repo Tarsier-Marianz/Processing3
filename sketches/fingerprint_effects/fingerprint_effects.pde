@@ -13,16 +13,16 @@ float _theta;
 void setup() {
   //fullScreen();                                        // uncomment to set fullscreen for the effects
   size(600, 600);
-  _arc = new Arcs[_totalArcs];
+  _arc = new Arcs[_totalArcs];                           // initialize arcs array to be created with total number of arc
 }
 
 void draw() {
-  background(0);  
+  background(0);                                         // set background with black color
   frameRate(30);                                         // speed of effects  
   translate(width/2, height/2);                          //center design
 
-  // loop to create multiple arclines
-  for (int i=0; i< _totalArcs; i++) {    
+
+  for (int i=0; i< _totalArcs; i++) {                    // loop to create multiple arclines 
     if (i > 15) {                                        // limit figure to circle and stop filling with stroke
       noStroke();
     } else if (i < 1) {                                  // no stroke for the first arc 
@@ -30,10 +30,10 @@ void draw() {
     } else {                                             // stroke color depends on mouse movement      
       stroke(mouseX/2.9, mouseY/2.9, i+255);             // stroke is set by mouse movement set to scale with fullscreen size
     }
-    _arc[i] = new Arcs(_totalArcs, _step);
+    _arc[i] = new Arcs(_totalArcs, _step);               // initialize new Arc & set all required property
     _arc[i].index = i;
     _arc[i].theta = _theta;
-    _arc[i].create();
+    _arc[i].create();                                    // call create Arc to draw on screen
   }
 
   colorMode(RGB);                                        // set color mode to RGB values & increase theta
