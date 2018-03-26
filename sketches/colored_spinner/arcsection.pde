@@ -4,8 +4,8 @@
  * Created: 2018-03-26
  * Sketch #5
  *****************************************************/
- 
- public class ArcSection {
+
+public class ArcSection {
   static final float NOISE_SCALE = 0.005f;
   float quantity;
 
@@ -32,7 +32,6 @@
       brightnessParameter = 90f;
       break;
     }
-
     seed = random(0f, 100f);
   }
 
