@@ -4,23 +4,21 @@
  * Created: 2018-03-26
  * Sketch #1
  *****************************************************/
-  
- 
+
+
 Matrix []_matrix = null;
 
 int w_height = 768;
 int w_width= 1366;
 int _matrix_count =5;
 
-void setup()
-{
+void setup() {
   fullScreen();
   smooth();
   _matrix = new Matrix[_matrix_count];
 }
 
-void draw()
-{
+void draw() {
   fill(0, 15);
   rect(0, 0, w_width, w_height);
 
@@ -36,12 +34,10 @@ void draw()
   }
 }
 
-class Matrix
-{
+class Matrix {
   float x, y, r, g, b, o, text1;
 
-  void create()
-  {
+  void create() {
     fill(r, g, b, o);
     for (int i = 0; i < 16; i++) {
       int x_pos = int(random(-420, 420));
