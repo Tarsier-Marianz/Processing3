@@ -5,9 +5,6 @@
  * Sketch #4
  *****************************************************/
 
-
-import processing.video.*;
-
 PImage pImg;
 
 void setup() {
