@@ -15,7 +15,8 @@ void setup() {
 }
 
 void draw() {
-  diameter = frameCount;                      // set diameter every updates of the frame
+  //diameter = frameCount;                      // set diameter every updates of the frame
+  diameter = frameCount  % width;             // to reset frame count if greater than width, to continue re-create another loop
   if (diameter < width && diameter % 5==0) {  // draw circle every 5 frame count interval and if less than width of screen
     background(0);                            // redraw background serve as eraser of previous created circle (uncomment if you want to view what happens)
     ellipse(width/2, height/2, diameter, diameter ); // and now let us create a circle
