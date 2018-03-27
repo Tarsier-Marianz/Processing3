@@ -5,14 +5,14 @@
  * Sketch #5
  *****************************************************/
 
-ArrayList<Arc> _arc = new ArrayList<Arc>();
-int reflectIndex = 0, totalArcs = 5;
+ArrayList<Arc> _arcs = new ArrayList<Arc>();
+int reflectIndex = 0, totalArcs = 5, diameter= 30;
 float []reflectX = new float[totalArcs];
 float []reflectY = new float[totalArcs];
 boolean toggleFlag = false;
+
 void setup() {
   size(480, 480, P2D);
-  //background(255f);
   smooth();
   initReflects();
   initArcLines();
@@ -21,15 +21,15 @@ void setup() {
 void initReflects() {
   for (int i=0; i < totalArcs; i++) {
     reflectX[i] = i * 100F;
-    reflectY[i] = i * 100F;
+    reflectY[i] = i * 100f+50f;
   }
 }
 
 void initArcLines() {
   for (int i=0; i < totalArcs; i++) {
-    int sectionNum = int(random(2, 40));
-    float huePrm = int(random(-100f, 100f));
-    _arc.add(new Arc(0f, 0f, i* 50f, sectionNum, huePrm, !toggleFlag));
+    int sectionNum = int(random(2, 50));
+    float huePrm = int(random(-255f, 255f));
+    _arcs.add(new Arc(0f, 0f, i* diameter, sectionNum, huePrm, !toggleFlag));
   }
 }
 
@@ -40,8 +40,7 @@ void draw() {
 
   float tmpAngle = radians(frameCount);
   int r = 0;
-  for (Arc arc : _arc) {
-    //arc.reflect(reflectX[2] * cos(tmpAngle), reflectX[2] * sin(tmpAngle));
+  for (Arc arc : _arcs) {
     arc.reflect(reflectX[r] * cos(tmpAngle), reflectX[r] * sin(tmpAngle));
     arc.update();
     arc.draw();
