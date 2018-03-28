@@ -22,7 +22,7 @@ void initializeCameras() {
   } else {
     println("Available cameras:" + cameras.length);
     for (int i = 0; i < cameras.length; i++) {
-      println(cameras[i]);
+      println(i +": "+cameras[i]);
 
       //cam = new Capture(this, cameras[i]);
       //cam.start();
