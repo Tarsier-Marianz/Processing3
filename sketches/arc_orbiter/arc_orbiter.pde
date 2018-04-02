@@ -1,33 +1,38 @@
 /* ***************************************************
  * Copyright (c) 2018 Tarsier-Marianz
  * Author: Marianz
- * Created: 2018-03-27
- * Sketch #9 arcb_orbiter.pde
+ * Created: 2018-04-02
+ * Sketch #9 arc_orbiter.pde
  *****************************************************/
   
 float thickness = 5;
 
 int count = 10;
 
-Orbiter[] orbiters = new Orbiter[count];
+Orbiter[] orbiters;
 
 void setup() {
   size(640, 480);
   strokeWeight(2);
-  float minDimen = min(width, height);
+  noFill();
+  strokeCap(SQUARE);
+  stroke(255);
+  
+  initOrbiters();
+}
+
+void initOrbiters(){  
+  orbiters = new Orbiter[count];
+  float minDimen = min(width, height);            //get minimum dimension
   //This is only to make the orbiters' radii evenly divided across the screen
   for (int i = 1; i<=orbiters.length; i++) {
     Orbiter o = new Orbiter(width/2, height/2, random(360), random(30, 180), random(90, 540), minDimen);
     o.radius = minDimen * ((float)i/orbiters.length);
     orbiters[i - 1] = o;
   }
-  noFill();
-  strokeCap(SQUARE);
-  stroke(255);
 }
 
 void draw() {
-  //background(0);
   fill(0, 40);
   noStroke();
   rect(-1, -1, width + 1, height + 1);
