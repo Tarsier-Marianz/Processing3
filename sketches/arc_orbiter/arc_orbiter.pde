@@ -4,7 +4,7 @@
  * Created: 2018-04-02
  * Sketch #9 arc_orbiter.pde
  *****************************************************/
-  
+
 
 int count = 10;
 
@@ -16,17 +16,21 @@ void setup() {
   noFill();
   strokeCap(SQUARE);
   stroke(255);
-  
+
   initOrbiters();
 }
 
-void initOrbiters(){  
+void initOrbiters() {  
   orbiters = new Orbiter[count];
   float minDimen = min(width, height);            //get minimum dimension
   //This is only to make the orbiters' radii evenly divided across the screen
   for (int i = 1; i<=orbiters.length; i++) {
-    Orbiter o = new Orbiter(width/2, height/2, random(360), random(30, 180), random(90, 540), minDimen);
-    o.radius = minDimen * ((float)i/orbiters.length);
+    float startAngle = random(360);
+    float sweep = random(30, 180);
+    float rotationSpeed = random(90, 540);
+    float radius = minDimen * ((float)i/orbiters.length);
+    Orbiter o = new Orbiter(width/2, height/2, startAngle, sweep, rotationSpeed, radius);
+    //o.radius = minDimen * ((float)i/orbiters.length);
     orbiters[i - 1] = o;
   }
 }
@@ -36,9 +40,9 @@ void draw() {
   noStroke();
   rect(-1, -1, width + 1, height + 1);
   noFill();
-  
+
   for (Orbiter o : orbiters) {
-    o.thickness = random(1,5);
+    o.thickness = random(1, 5);
     o.updateAndDraw();
   }
   colorMode(HSB);
@@ -58,7 +62,7 @@ class Orbiter {
   public Orbiter(float centerX, float centerY, float startAngle, float sweep, float rotationSpeed, float radius) {
     this.centerX = centerX;
     this.centerY = centerY;
-    angle = startAngle;
+    this.angle = startAngle;
     this.rotationSpeed = rotationSpeed;
     this.radius = radius;
     this.sweep = sweep;
