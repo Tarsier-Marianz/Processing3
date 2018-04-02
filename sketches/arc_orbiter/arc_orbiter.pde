@@ -5,7 +5,6 @@
  * Sketch #9 arc_orbiter.pde
  *****************************************************/
   
-float thickness = 5;
 
 int count = 10;
 
@@ -39,11 +38,10 @@ void draw() {
   noFill();
   
   for (Orbiter o : orbiters) {
+    o.thickness = random(1,5);
     o.updateAndDraw();
   }
-  strokeWeight(thickness);
   colorMode(HSB);
-  //stroke(200, 100, 20);
   point(width/2, height/2);
 }
 
@@ -55,6 +53,7 @@ class Orbiter {
   float angle;
   float rotationSpeed;
   float radius;
+  float thickness = 5;
 
   public Orbiter(float centerX, float centerY, float startAngle, float sweep, float rotationSpeed, float radius) {
     this.centerX = centerX;
