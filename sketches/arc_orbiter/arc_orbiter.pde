@@ -6,7 +6,7 @@
  *****************************************************/
 
 
-int count = 10;
+int count = 16;
 
 Orbiter[] orbiters;
 
@@ -31,6 +31,7 @@ void initOrbiters() {
     float radius = minDimen * ((float)i/orbiters.length);
     Orbiter o = new Orbiter(width/2, height/2, startAngle, sweep, rotationSpeed, radius);
     //o.radius = minDimen * ((float)i/orbiters.length);
+    o.thickness = random(1, 5);
     orbiters[i - 1] = o;
   }
 }
@@ -41,9 +42,8 @@ void draw() {
   rect(-1, -1, width + 1, height + 1);
   noFill();
 
-  for (Orbiter o : orbiters) {
-    o.thickness = random(1, 5);
-    o.updateAndDraw();
+  for (Orbiter o : orbiters) {    
+    o.update();
   }
   colorMode(HSB);
   point(width/2, height/2);
@@ -68,13 +68,9 @@ class Orbiter {
     this.sweep = sweep;
   }
 
-  public void updateAndDraw() {
-    update();
-    draw();
-  }
-
   public void update() {
     angle += rotationSpeed / 60f;
+    draw();
   }
 
   public void draw() {
