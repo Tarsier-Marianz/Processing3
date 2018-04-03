@@ -5,12 +5,13 @@
  * Sketch #12 rotating_circles.pde
  *****************************************************/
 
-int _circleCount = 20;
+int _circleSize = 400;
+int _circleCount = 50;
 float[]_angleX=new float[_circleCount];
 float[]_angleY=new float[_circleCount];
 
 void setup() {
-  size(600, 400, P3D);
+  size(600, 600, P3D);
   initCircles();
   smooth();
 }
@@ -29,10 +30,10 @@ void draw() {
     _angleX[i]+=1;
     _angleY[i]+=1;
     noFill();
-    stroke(0, 100);
-    strokeWeight(2);
+    stroke(mouseX/2.9, mouseY/2.9, i*_angleX[i]); 
+    strokeWeight(1);
     rotateX(radians(_angleX[i]));
     rotateY(radians(_angleY[i]));
-    ellipse(0, 0, 250, 250);
+    ellipse(0, 0, _circleSize, _circleSize);
   }
 }
