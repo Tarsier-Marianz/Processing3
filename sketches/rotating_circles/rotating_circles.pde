@@ -11,11 +11,15 @@ float[]_angleY=new float[_circleCount];
 
 void setup() {
   size(600, 400, P3D);
+  initCircles();
+  smooth();
+}
+
+void initCircles() {  
   for (int i=0; i < _circleCount; i++) {
     _angleX[i]=random(360);
     _angleY[i]=random(360);
   }
-  smooth();
 }
 
 void draw() {
