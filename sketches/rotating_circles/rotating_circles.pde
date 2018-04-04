@@ -6,7 +6,7 @@
  *****************************************************/
 
 int _circleSize = 400;
-int _circleCount = 50;
+int _circleCount = 100;
 float[]_angleX=new float[_circleCount];
 float[]_angleY=new float[_circleCount];
 
@@ -26,14 +26,16 @@ void initCircles() {
 void draw() {
   background(255);
   translate(width/2, height/2);
+  float h = random(0, 360);
   for (int i=0; i < _circleCount; i++) {
     _angleX[i]+=1;
     _angleY[i]+=1;
     noFill();
-    stroke(mouseX/2.9, mouseY/2.9, i*_angleX[i]); 
+    stroke(mouseX/2.9, mouseY/2.9, h*i); 
     strokeWeight(1);
     rotateX(radians(_angleX[i]));
     rotateY(radians(_angleY[i]));
     ellipse(0, 0, _circleSize, _circleSize);
+    h = (h + 1) % 360;
   }
 }
