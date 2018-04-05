@@ -44,24 +44,17 @@ void matrixStep(int w, int h, int[] y, int[] l) {
       if (!thistime) {
         continue;
       }
-      stroke(255); //white
       fill(255); //white
     } else {
       stroke(9, 107, 22); //.DarkGreen;
-      fill(9, 107, 22); //.DarkGreen;    
-      char c = randomChar();
-      text(c, x, inBoxY(y[x] - 2 - (l[x] / 40 * 2), h));
-      //noStroke();
-      noFill();
-      stroke(40, 191, 60); //Green;
+      fill(9, 107, 22); //.DarkGreen;  
+      printChar( x, inBoxY(y[x] - 2 - (l[x] / 40 * 2), h), 10);
       fill(40, 191, 60); //Green;
     }
-    char c = randomChar();
-    text(c, x, y[x]);
-    y[x] = inBoxY(y[x] + 1, h);
+    printChar( x, y[x], 10);
 
+    y[x] = inBoxY(y[x] + 1, h);
     text("", x, inBoxY(y[x] - l[x], h));
-    noFill();
   }
 }
 
@@ -92,10 +85,24 @@ char randomChar() {
     return (char)int(random(32, 255));
 }
 
-public int inBoxY(int n, int _height) {
+int inBoxY(int n, int _height) {
   n = n % _height;
   if (n < 0)
     return n + _height;
   else
     return n;
+}
+
+void printChar(int x, int y, int count) {
+  if (count >0) {
+    int y2= y;
+    for (int i=0; i<count; i++) {
+      char c = randomChar();
+      text(c, x, y2);
+      y2 *= 4;
+    }
+  } else { 
+    char c = randomChar();
+    text(c, x, y);
+  }
 }
