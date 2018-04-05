@@ -18,10 +18,9 @@ void setup() {
   //size(960, 600);
   _font = createFont("Courier New", 14);
   textFont(_font);
-  initialize();
-  stroke(2);
-  noFill();
   smooth();
+  
+  initialize();
 }
 
 void draw() {
@@ -33,7 +32,7 @@ void draw() {
 
   float m = ( millis() - timeOne);
   _matrixstep = random(10-m, m);
-  text(_matrixstep, 100, 100);
+  text(_matrixstep, 10, 20);
   if (_matrixstep > 0) {
     delay((int)_matrixstep);
   }
