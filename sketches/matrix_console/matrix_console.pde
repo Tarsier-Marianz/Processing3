@@ -26,8 +26,11 @@ void setup() {
 
 void draw() {
   background(0);
+
   float timeOne = millis();
+
   matrixStep(_width, _height, _y, _l);
+
   float m = ( millis() - timeOne);
   _matrixstep = random(10-m, m);
   text(_matrixstep, 100, 100);
@@ -46,9 +49,9 @@ void matrixStep(int w, int h, int[] y, int[] l) {
       }
       fill(255); //white
     } else {
-      stroke(9, 107, 22); //.DarkGreen;
       fill(9, 107, 22); //.DarkGreen;  
       printChar( x, inBoxY(y[x] - 2 - (l[x] / 40 * 2), h), 10);
+
       fill(40, 191, 60); //Green;
     }
     printChar( x, y[x], 10);
@@ -76,13 +79,13 @@ void initialize() {
 char randomChar() {
   int t = int(random(33, 127));
   if (t <= 2)
-    return (char)('0' + random(10));
+    return (char)random(10);
   else if (t <= 4)
-    return (char)('a' + random(27));
+    return (char)random(27);
   else if (t <= 6)
-    return (char)('A' + random(27));
+    return (char)random(27);
   else
-    return (char)int(random(32, 255));
+    return (char)random(32, 255);
 }
 
 int inBoxY(int n, int _height) {
