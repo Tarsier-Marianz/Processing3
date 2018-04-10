@@ -31,8 +31,7 @@ void draw() {
   float lastx=-999;
   float lasty=-999;
   stroke(mouseX, mouseY, random(2*(frameCount%20)));
-  ellipse(mouseX, mouseY, 20, 20);
-  for (float ang = 0; ang <= 1440; ang+=2) {
+  for (float ang = 0; ang <= 360; ang+=2) {
     float thisRadius = radius + (random(100)+50);
     float rad=radians(ang);
     x=centX + (thisRadius*cos(rad));
@@ -42,5 +41,6 @@ void draw() {
     }
     lastx=x;
     lasty=y;
+  ellipse(mouseX, mouseY, 20, 20);
   }
 }
