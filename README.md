@@ -18,6 +18,10 @@ Collections of sketches using [Processing3](https://processing.org/), from inter
 
 * `histogram_camera` - generating histogram from captured view of detected video camera of the machine.
 
+* `videocam` - a simple example on how to detect video cameras of your machine then automatically select and start the current camera if available during checking of its availability. This piece of code sample is from processing [libraries video example](https://processing.org/reference/libraries/video/Capture.html). 
+
+
+
 
 
 
