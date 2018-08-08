@@ -16,3 +16,8 @@ Collections of sketches using [Processing3](https://processing.org/), from inter
 
 * `circular_frame` - small circle changing its size every frames with a count of 5.
 
+* `histogram_camera` - generating histogram from captured view of detected video camera of the machine.
+
+
+
+
