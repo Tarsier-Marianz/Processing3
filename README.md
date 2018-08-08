@@ -14,3 +14,5 @@ Collections of sketches using [Processing3](https://processing.org/), from inter
 
 * `orbiting_circles` - small circles orbiting big circle, *stroke of big circle becomes the orbiting path of small circles*.
 
+* `circular_frame` - small circle changing its size every frames with a count of 5.
+
