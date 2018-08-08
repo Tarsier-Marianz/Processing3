@@ -32,7 +32,8 @@ void histogram(PImage img) {
 
   // Find the largest value in the histogram
   int histMax = max(hist);
-  stroke(255, 0, 0);
+  stroke(255, 0, 0);      // stroke color red
+  strokeWeight(histMax*0.00005);
   // Draw half of the histogram (skip every second value)
   for (int i = 0; i < img.width; i += 2) {
     // Map i (from 0..img.width) to a location in the histogram (0..255)
