@@ -10,3 +10,5 @@ Collections of sketches using [Processing3](https://processing.org/), from inter
 
 * `histogram_image` - creating [histogram](https://en.wikipedia.org/wiki/Histogram) from loaded image file then generate histogram.
 
+* `colored_spinner` - spin multi arc with random sizes, every changes of the frames it also ramdomly changed its color and size.
+
