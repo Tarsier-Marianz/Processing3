@@ -8,3 +8,5 @@ Collections of sketches using [Processing3](https://processing.org/), from inter
 
 * `histogram_video` - creating [histogram](https://en.wikipedia.org/wiki/Histogram) from loaded video file, converting every frames of video to image while looping then generate histogram.
 
+* `histogram_image` - creating [histogram](https://en.wikipedia.org/wiki/Histogram) from loaded image file then generate histogram.
+
