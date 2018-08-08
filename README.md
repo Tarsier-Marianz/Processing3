@@ -12,3 +12,5 @@ Collections of sketches using [Processing3](https://processing.org/), from inter
 
 * `colored_spinner` - spin multi arc with random sizes, every changes of the frames it also ramdomly changed its color and size.
 
+* `orbiting_circles` - small circles orbiting big circle, *stroke of big circle becomes the orbiting path of small circles*.
+
