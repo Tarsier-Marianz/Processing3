@@ -2,7 +2,7 @@
  * Copyright (c) 2018 Tarsier-Marianz
  * Author: Marianz
  * Created: 2018-03-27
- * Sketch #5
+ * Sketch #6
  *****************************************************/
 
 int _circleCount = 10;
