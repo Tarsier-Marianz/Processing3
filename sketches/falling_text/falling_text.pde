@@ -2,7 +2,7 @@
  * Copyright (c) 2018 Tarsier-Marianz
  * Author: Marianz
  * Created: 2018-04-04
- * Sketch #13 matrix_console.pde
+ * Sketch #13 falling_text.pde
  *****************************************************/
 
 PFont _font;
@@ -56,7 +56,11 @@ void matrixStep(int w, int h, int[] y, int[] l) {
     printChar( x, y[x], 10);
 
     y[x] = inBoxY(y[x] + 1, h);
-    text("", x, inBoxY(y[x] - l[x], h));
+    text(" ", x, inBoxY(y[x] - l[x], h));
+    
+    //for(int n =0; n < random(20); n++){
+    //   text(" ", x+n, inBoxY(y[x] - l[x], h+n));
+    //}
   }
 }
 
