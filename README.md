@@ -22,6 +22,8 @@ Collections of sketches using [Processing3](https://processing.org/), from inter
 
 * `arc_orbiter` - just a simple rotation of gradient arc.
 
+* `clock_arc` - rotation of number every tick of the system clock, it means this is dependent of the clock of your machine. Changing its background color depending every changes of hours, minutes and also seconds. I found this piece of code from [openprocessing](https://www.openprocessing.org/) site. 
+
 
 
 
