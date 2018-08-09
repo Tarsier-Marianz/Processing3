@@ -20,6 +20,9 @@ Collections of sketches using [Processing3](https://processing.org/), from inter
 
 * `videocam` - a simple example on how to detect video cameras of your machine then automatically select and start the current camera if available during checking of its availability. This piece of code sample is from processing [libraries video example](https://processing.org/reference/libraries/video/Capture.html). 
 
+* `arc_orbiter` - just a simple rotation of gradient arc.
+
+
 
 
 
