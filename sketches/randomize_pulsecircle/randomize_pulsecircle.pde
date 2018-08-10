@@ -2,7 +2,7 @@
  * Copyright (c) 2018 Tarsier-Marianz
  * Author: Marianz
  * Created: 2018-04-08
- * Sketch #14 rotating_circles.pde
+ * Sketch #14 randomize_pulsecircle.pde
  *****************************************************/
 
 int centX=0;
