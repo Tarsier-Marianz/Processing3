@@ -30,6 +30,10 @@ Collections of sketches using [Processing3](https://processing.org/), from inter
 
 * `randomize_pulsecircle` - circular pulse wave, pulse change randomly in every updates of the frame. It change stroke color depending on mouse position. 
 
+* `mouse_circle_lines` - create lines that circulates around circle, line count dependent on summation of [mouse X position](https://processing.org/reference/mouseX.html)  and [mouse Y position](https://processing.org/reference/mouseY.html).
+
+
+
 
 
 
